@@ -1,0 +1,673 @@
+/*
+Theme Name: 101 Gym Custom Theme
+Description: Full details split theme with combat sports, social links, and smooth animations.
+Author: Zaid
+Version: 4.0
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #000000;
+    font-family: 'Cairo', sans-serif;
+}
+
+.gym-split-hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.hero-pane {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: flex-grow 1.1s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: flex-grow;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* حركة الهوفر القوية: توسيع الجهة اللي فيها الماوس وتصغير الجهة الثانية */
+#splitHero.hover-black .pane-black {
+    flex-grow: 3.5;
+}
+#splitHero.hover-black .pane-yellow {
+    flex-grow: 0.6;
+}
+
+#splitHero.hover-yellow .pane-yellow {
+    flex-grow: 3.5;
+}
+#splitHero.hover-yellow .pane-black {
+    flex-grow: 0.6;
+}
+
+/* القسم الأيسر: الثلثين (خلفية اللوجو الضبابية الفخمة) */
+.pane-black {
+    flex: 2;
+    background-color: #000000;
+    color: #ffffff;
+    border-right: 4px solid #FFD700;
+    padding: 50px 70px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* جعل اللوجو خلفية ضبابية واسعة للقسم الأيسر بوضوح أعلى */
+.logo-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* رفعنا الإضاءة وخففنا البلور شوي عشان تظهر التفاصيل بوضوح */
+    filter: blur(8px) brightness(0.65) contrast(120%);
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+/* خففنا طبقة التغشية السوداء عشان تبين الخلفية ساطعة ورهيبة */
+.pane-black::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45); /* تعتيم خفيف جداً لقراءة النصوص */
+    z-index: 1;
+}
+
+/* القسم الأيمن: الثلث (أصفر) */
+.pane-yellow {
+    flex: 1;
+    background-color: #FFD700;
+    color: #000000;
+    padding: 40px 30px;
+    flex-direction: column;
+}
+
+.pane-content {
+    width: 100%;
+    max-width: 700px;
+}
+
+.yellow-side-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.huge-heading {
+    font-size: 42px;
+    font-weight: 900;
+    color: #FFD700;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+}
+
+/* ألعاب القتال */
+.combat-sports-tags {
+    font-size: 18px;
+    font-weight: 900;
+    color: #ffffff;
+    background-color: #111111;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.combat-sports-tags span {
+    color: #FFD700;
+}
+
+/* شبكة المعلومات */
+.gym-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.info-item {
+    font-size: 17px;
+    font-weight: 700;
+    color: #dddddd;
+    background: rgba(255, 215, 0, 0.05);
+    padding: 10px 15px;
+    border-radius: 6px;
+    border-right: 4px solid #FFD700;
+}
+
+.info-item strong {
+    color: #FFD700;
+}
+
+/* الجانب الأصفر وأزرار التواصل */
+.badge-box {
+    display: inline-block;
+    background-color: #000000;
+    color: #FFD700;
+    font-weight: 900;
+    padding: 8px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.yellow-side-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #000000;
+    margin: 0 0 25px 0;
+}
+
+.social-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 320px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 20px;
+    font-size: 16px;
+    font-weight: 900;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.social-btn .icon {
+    font-size: 20px;
+}
+
+.wa-btn {
+    background-color: #000000;
+    color: #25D366;
+    border: 2px solid #000;
+}
+.wa-btn:hover {
+    background-color: #25D366;
+    color: #ffffff;
+}
+
+.fb-btn {
+    background-color: #000000;
+    color: #1877F2;
+    border: 2px solid #000;
+}
+.fb-btn:hover {
+    background-color: #1877F2;
+    color: #ffffff;
+}
+
+.ig-btn {
+    background-color: #000000;
+    color: #E4405F;
+    border: 2px solid #000;
+}
+.ig-btn:hover {
+    background-color: #E4405F;
+    color: #ffffff;
+}
+
+.loc-btn {
+    background-color: #000000;
+    color: #FFD700;
+    border: 2px solid #000;
+}
+.loc-btn:hover {
+    background-color: #FFD700;
+    color: #000000;
+}
+
+.animated-pulse-dot {
+    width: 15px;
+    height: 15px;
+    background-color: #000000;
+    border-radius: 50%;
+    margin: 20px auto 0 auto;
+    animation: pulseAnimation 1.5s infinite;
+}
+
+/* --- تنسيقات القسم الثاني: المدرب أحمد حلمي --- */
+.coach-section {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #030303;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-top: 4px solid #FFD700;
+    padding: 60px 0;
+    box-sizing: border-box;
+}
+
+/* فيديو الخلفية الضبابي لقسم المدرب */
+.coach-video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* بلور خفيف وتعتيم متوسط بس يضل الفيديو ظاهر ومتناسق مع الهوية */
+    filter: blur(3px) grayscale(20%) brightness(0.75) contrast(112%);
+    transform: scale(1.08); /* لتغطية حواف البلور */
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* طبقة تعتيم خفيفة فوق الفيديو لضمان وضوح المحتوى بدون إخفاء الفيديو */
+.coach-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.coach-grid-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    max-width: 1300px;
+    height: 80vh;
+    background-color: rgba(8, 8, 8, 0.15);
+    /* زجاج شفاف فعلي يخلي الفيديو يبين بوضوح من وراه */
+    backdrop-filter: blur(4px) saturate(140%);
+    -webkit-backdrop-filter: blur(4px) saturate(140%);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 215, 0, 0.25);
+    overflow: hidden;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.85),
+        0 0 60px rgba(255, 215, 0, 0.06),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+/* عكس اتجاه الشبكة: الصورة يمين والنص يسار */
+.coach-grid-reverse {
+    flex-direction: row-reverse;
+}
+
+.coach-grid-reverse .coach-image-box {
+    border-right: none;
+    border-left: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.coach-grid-reverse .coach-badge-tag {
+    left: auto;
+    right: 30px;
+}
+
+.coach-grid-reverse .sub-heading-tag {
+    border-right: none;
+    border-left: 3px solid #FFD700;
+}
+
+.coach-grid-reverse .c-feature-item {
+    border-left: none;
+    border-right: 4px solid #FFD700;
+}
+
+/* جهة الصورة */
+.coach-image-box {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgba(255, 215, 0, 0.3);
+    transition: transform 0.2s ease-out;
+}
+
+.coach-img-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.coach-real-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    filter: grayscale(20%) contrast(110%);
+    transition: transform 0.5s ease;
+}
+
+.coach-image-box:hover .coach-real-img {
+    transform: scale(1.05);
+}
+
+.coach-badge-tag {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background-color: #FFD700;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 8px 20px;
+    border-radius: 6px;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* جهة النصوص والمعلومات */
+.coach-info-box {
+    flex: 1.2;
+    display: flex;
+    align-items: center;
+    padding: 60px;
+    background-color: rgba(10, 10, 10, 0.1);
+}
+
+.coach-content-inner {
+    max-width: 600px;
+}
+
+.sub-heading-tag {
+    display: inline-block;
+    color: #FFD700;
+    background-color: rgba(255, 215, 0, 0.1);
+    font-size: 16px;
+    font-weight: 900;
+    padding: 6px 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border-right: 3px solid #FFD700;
+}
+
+.coach-name-title {
+    font-size: 48px;
+    font-weight: 900;
+    color: #FFD700;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.coach-specialty {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 25px 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.coach-bio-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+.coach-features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.c-feature-item {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #121212;
+    padding: 12px 18px;
+    border-radius: 6px;
+    border-left: 4px solid #FFD700;
+}
+
+@keyframes pulseAnimation {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); }
+    70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+}
+
+/* --- تنسيقات القسم الرابع: جدول التدريب الأسبوعي --- */
+.schedule-section {
+    width: 100vw;
+    background-color: #050505;
+    border-top: 4px solid #FFD700;
+    padding: 70px 40px;
+    box-sizing: border-box;
+}
+
+.schedule-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.schedule-title {
+    font-size: 40px;
+    font-weight: 900;
+    color: #FFD700;
+    margin: 15px 0 0 0;
+    letter-spacing: 1px;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 18px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.day-card {
+    background-color: #0d0d0d;
+    border: 1px solid #222222;
+    border-radius: 14px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.day-card:hover {
+    border-color: #FFD700;
+    transform: translateY(-4px);
+}
+
+.day-name {
+    background-color: #FFD700;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 900;
+    text-align: center;
+    padding: 14px 8px;
+}
+
+.class-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 14px 12px;
+    border-bottom: 1px solid #1a1a1a;
+    text-align: center;
+}
+
+.class-item:last-child {
+    border-bottom: none;
+}
+
+.class-time {
+    font-size: 13px;
+    font-weight: 700;
+    color: #FFD700;
+    direction: ltr;
+}
+
+.class-name {
+    font-size: 15px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.class-name small {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #999999;
+    margin-top: 2px;
+}
+
+.class-item.no-class {
+    color: #555555;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 24px 12px;
+}
+
+.schedule-footer {
+    text-align: center;
+    margin-top: 55px;
+    padding-top: 40px;
+    border-top: 1px solid #222222;
+}
+
+.join-classes-title {
+    font-size: 30px;
+    font-weight: 900;
+    color: #ffffff;
+    margin: 0 0 25px 0;
+    letter-spacing: 1px;
+}
+
+.schedule-footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.schedule-footer-links .social-btn {
+    width: auto;
+    min-width: 260px;
+}
+
+/* التجاوب مع الموبايل */
+@media (max-width: 900px) {
+    .gym-split-hero {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+    .hero-pane {
+        width: 100%;
+        padding: 40px 20px;
+    }
+    .pane-black {
+        border-right: none;
+        border-bottom: 4px solid #FFD700;
+    }
+    .huge-heading {
+        font-size: 32px;
+    }
+
+    /* إلغاء حركة الهوفر القوية على الموبايل لأن التقسيم عمودي */
+    #splitHero.hover-black .pane-black,
+    #splitHero.hover-yellow .pane-black {
+        flex-grow: 2;
+    }
+    #splitHero.hover-black .pane-yellow,
+    #splitHero.hover-yellow .pane-yellow {
+        flex-grow: 1;
+    }
+
+    .coach-grid-container {
+        flex-direction: column;
+        height: auto;
+        width: 95%;
+    }
+    .coach-grid-reverse {
+        flex-direction: column;
+    }
+    .coach-image-box {
+        height: 350px;
+        border-right: none;
+        border-bottom: 3px solid #FFD700;
+    }
+    .coach-grid-reverse .coach-image-box {
+        border-left: none;
+        border-bottom: 3px solid #FFD700;
+    }
+    .coach-grid-reverse .coach-badge-tag {
+        right: auto;
+        left: 30px;
+    }
+    .coach-info-box {
+        padding: 30px 20px;
+    }
+    .coach-name-title {
+        font-size: 36px;
+    }
+    .coach-bio-text {
+        font-size: 16px;
+    }
+
+    .schedule-section {
+        padding: 50px 20px;
+    }
+    .schedule-title {
+        font-size: 28px;
+    }
+    .schedule-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .schedule-footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    .schedule-footer-links .social-btn {
+        width: 100%;
+        max-width: 320px;
+        min-width: unset;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+    .schedule-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

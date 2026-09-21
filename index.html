@@ -1,0 +1,321 @@
+<?php
+/**
+ * The main template file
+ *
+ * @package 101_Gym_Custom_Theme
+ */
+
+get_header();
+?>
+
+<main id="primary" class="site-main">
+
+    <!-- قسم الواجهة الاحترافي مع جعل اللوجو خلفية ضبابية (Blur Background) -->
+    <section class="gym-split-hero" id="splitHero">
+        
+        <!-- الجانب الأيسر (الثلثين - اللوجو خلفية ضبابية مع المحتوى فوقه) -->
+        <div class="hero-pane pane-black" id="paneBlack">
+            <!-- طبقة خلفية اللوجو مع الـ Blur -->
+            <div class="logo-bg-overlay" style="background-image: url('<?php echo get_template_directory_uri(); ?>/logo.png');"></div>
+            
+            <div class="pane-content" style="position: relative; z-index: 2;">
+                
+                <h1 class="huge-heading">101 GYM</h1>
+                
+                <!-- الألعاب القتالية -->
+                <div class="combat-sports-tags">
+                    <span>Kickboxing</span> • 
+                    <span>Boxing</span> • 
+                    <span>Jiu-Jitsu</span> • 
+                    <span>Sanda</span> • 
+                    <span>Judo</span>
+                </div>
+
+                <!-- معلومات النادي والخبرة -->
+                <div class="gym-info-grid">
+                    <div class="info-item">🥋 <strong>Certified Coaches</strong> | 25+ yrs Experience</div>
+                    <div class="info-item">📍 <strong>Zarqa</strong></div>
+                    <div class="info-item">👥 <strong>Group & Private Classes</strong></div>
+                    <div class="info-item">🏆 <strong>Ladies & Gentlemen</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الجانب الأيمن (الثلث - خلفية صفراء بالكامل وأزرار التواصل الفخمة) -->
+        <div class="hero-pane pane-yellow" id="paneYellow">
+            <div class="pane-content yellow-side-content">
+                <span class="badge-box">تواصل معنا</span>
+                <h2 class="yellow-side-title">انضم إلينا الآن</h2>
+                
+                <!-- أزرار التواصل الاجتماعي المنسقة بفخامة -->
+                <div class="social-links-container">
+                    <!-- واتساب -->
+                    <a href="https://api.whatsapp.com/send?phone=%2B962788648893" target="_blank" class="social-btn wa-btn">
+                        <span class="icon">💬</span> WhatsApp
+                    </a>
+                    
+                    <!-- فيسبوك -->
+                    <a href="https://web.facebook.com/profile.php?id=61573960601473" target="_blank" class="social-btn fb-btn">
+                        <span class="icon">📘</span> Facebook
+                    </a>
+                    
+                    <!-- انستغرام -->
+                    <a href="https://www.instagram.com/101gymjo" target="_blank" class="social-btn ig-btn">
+                        <span class="icon">📸</span> Instagram
+                    </a>
+
+                    <!-- الموقع -->
+                    <a href="https://www.bing.com/maps/default.aspx?v=2&pc=FACEBK&mid=8100&where1=King%20Talal%20Street%2C%20Az%20Zarqa%2C%20Jordan%2C%2013110&FORM=FBKPL1&mkt=en-US" target="_blank" class="social-btn loc-btn">
+                        <span class="icon">📍</span> Location
+                    </a>
+                </div>
+
+                <div class="animated-pulse-dot"></div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- القسم الثاني: قسم المدرب أحمد حلمي (تصميم قتالي فخم) -->
+    <section class="coach-section" id="coachSection">
+        <!-- فيديو الخلفية الضبابي (يتناوب بين فيديوهين تلقائياً) -->
+        <video class="coach-video-bg" id="ahmedBgVideo" autoplay muted playsinline>
+            <source src="<?php echo get_template_directory_uri(); ?>/ahmed-bg-1.mp4" type="video/mp4">
+        </video>
+        <div class="coach-video-overlay"></div>
+
+        <div class="coach-grid-container">
+            
+            <!-- جهة الصورة مع تأثيرات الحركة -->
+            <div class="coach-image-box" id="coachImageBox">
+                <div class="coach-img-wrapper">
+                    <img src="<?php echo get_template_directory_uri(); ?>/coach.jpg" alt="Coach Ahmed Helmy" class="coach-real-img">
+                    <div class="coach-badge-tag">HEAD COACH</div>
+                </div>
+            </div>
+
+            <!-- جهة المعلومات والنبذة القوية -->
+            <div class="coach-info-box">
+                <div class="coach-content-inner">
+                    <span class="sub-heading-tag">مدرب معتمد</span>
+                    <h2 class="coach-name-title">الكابتن أحمد حلمي</h2>
+                    <h3 class="coach-specialty">مدرب Kickboxing محترف</h3>
+                    
+                    <p class="coach-bio-text">
+                        خبرة طويلة وعميقة في صناعة الأبطال وتدريب فنون القتال والدفاع عن النفس. إرادة حديدية، تدريب مكثف، وبناء جَسدي وعقلي لا يكسر.
+                    </p>
+
+                    <div class="coach-features-list">
+                        <div class="c-feature-item">🔥 تدريب شخصي وجماعي بمستويات عالمية</div>
+                        <div class="c-feature-item">⚡ صقل مهارات السرعة، القوة، والتحمل</div>
+                        <div class="c-feature-item">🏆 إعداد وتجهيز المقاتلين للبطولات</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- القسم الثالث: قسم المدرب فراس (تصميم قتالي فخم - عكس الاتجاه) -->
+    <section class="coach-section" id="coachSectionFiras">
+        <!-- فيديو الخلفية الضبابي (يتناوب بين فيديوهين تلقائياً) -->
+        <video class="coach-video-bg" id="firasBgVideo" autoplay muted playsinline>
+            <source src="<?php echo get_template_directory_uri(); ?>/firas-bg-1.mp4" type="video/mp4">
+        </video>
+        <div class="coach-video-overlay"></div>
+
+        <div class="coach-grid-container coach-grid-reverse">
+
+            <!-- جهة المعلومات والنبذة القوية -->
+            <div class="coach-info-box">
+                <div class="coach-content-inner">
+                    <span class="sub-heading-tag">مدرب معتمد</span>
+                    <h2 class="coach-name-title">الكابتن فراس</h2>
+                    <h3 class="coach-specialty">مدرب ملاكمة محترف</h3>
+
+                    <p class="coach-bio-text">
+                        خبرة واسعة في حلبات الملاكمة تدريبًا وتحكيمًا، بأسلوب تدريب دقيق يجمع بين التكتيك والانضباط البدني. يركّز على بناء مقاتلين أقوياء جسديًا وذهنيًا.
+                    </p>
+
+                    <div class="coach-features-list">
+                        <div class="c-feature-item">🥊 تدريب أساسيات ومتقدمات الملاكمة لجميع المستويات</div>
+                        <div class="c-feature-item">⚡ تطوير سرعة اللكمات ورد الفعل والتكتيك القتالي</div>
+                        <div class="c-feature-item">🏆 إعداد المقاتلين للمنافسات والبطولات الرسمية</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- جهة الصورة مع تأثيرات الحركة -->
+            <div class="coach-image-box" id="coachImageBoxFiras">
+                <div class="coach-img-wrapper">
+                    <img src="<?php echo get_template_directory_uri(); ?>/firas.jpg" alt="Coach Firas" class="coach-real-img">
+                    <div class="coach-badge-tag">BOXING COACH</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- القسم الرابع: جدول التدريب الأسبوعي -->
+    <section class="schedule-section" id="scheduleSection">
+        <div class="schedule-header">
+            <span class="sub-heading-tag">جدول الحصص</span>
+            <h2 class="schedule-title">جدول التدريب الأسبوعي</h2>
+        </div>
+
+        <div class="schedule-grid">
+
+            <!-- السبت -->
+            <div class="day-card">
+                <div class="day-name">السبت</div>
+                <div class="class-item"><span class="class-time">3:00-5:00 مساءً</span><span class="class-name">سيدات</span></div>
+                <div class="class-item"><span class="class-time">5:00-6:00 مساءً</span><span class="class-name">كيك بوكسينغ</span></div>
+                <div class="class-item"><span class="class-time">6:30-8:00 مساءً</span><span class="class-name">كيك بوكسينغ</span></div>
+                <div class="class-item"><span class="class-time">8:00-9:30 مساءً</span><span class="class-name">ملاكمة</span></div>
+                <div class="class-item"><span class="class-time">8:30-10:00 صباحاً</span><span class="class-name">ساندا</span></div>
+            </div>
+
+            <!-- الأحد -->
+            <div class="day-card">
+                <div class="day-name">الأحد</div>
+                <div class="class-item no-class">— NO CLASS —</div>
+                <div class="class-item"><span class="class-time">5:00-6:00 مساءً</span><span class="class-name">جيوجيتسو <small>(7-12 سنة)</small></span></div>
+                <div class="class-item"><span class="class-time">6:00-7:00 مساءً</span><span class="class-name">جيوجيتسو <small>(13+ سنة)</small></span></div>
+                <div class="class-item"><span class="class-time">7:00-8:00 مساءً</span><span class="class-name">جودو</span></div>
+            </div>
+
+            <!-- الإثنين -->
+            <div class="day-card">
+                <div class="day-name">الإثنين</div>
+                <div class="class-item"><span class="class-time">3:00-5:00 مساءً</span><span class="class-name">سيدات</span></div>
+                <div class="class-item"><span class="class-time">5:00-6:00 مساءً</span><span class="class-name">كيك بوكسينغ</span></div>
+                <div class="class-item"><span class="class-time">6:30-8:00 مساءً</span><span class="class-name">كيك بوكسينغ</span></div>
+                <div class="class-item"><span class="class-time">8:00-9:30 مساءً</span><span class="class-name">ملاكمة</span></div>
+                <div class="class-item"><span class="class-time">8:30-10:00 صباحاً</span><span class="class-name">ساندا</span></div>
+            </div>
+
+            <!-- الثلاثاء -->
+            <div class="day-card">
+                <div class="day-name">الثلاثاء</div>
+                <div class="class-item no-class">— NO CLASS —</div>
+                <div class="class-item"><span class="class-time">5:00-6:00 مساءً</span><span class="class-name">جيوجيتسو <small>(7-12 سنة)</small></span></div>
+                <div class="class-item"><span class="class-time">6:00-7:00 مساءً</span><span class="class-name">جيوجيتسو <small>(13+ سنة)</small></span></div>
+                <div class="class-item"><span class="class-time">7:00-8:00 مساءً</span><span class="class-name">جودو</span></div>
+            </div>
+
+            <!-- الأربعاء -->
+            <div class="day-card">
+                <div class="day-name">الأربعاء</div>
+                <div class="class-item"><span class="class-time">3:00-5:00 مساءً</span><span class="class-name">سيدات</span></div>
+                <div class="class-item"><span class="class-time">5:00-6:00 مساءً</span><span class="class-name">كيك بوكسينغ</span></div>
+                <div class="class-item"><span class="class-time">6:30-8:00 مساءً</span><span class="class-name">كيك بوكسينغ</span></div>
+                <div class="class-item"><span class="class-time">8:00-9:30 مساءً</span><span class="class-name">ملاكمة</span></div>
+                <div class="class-item"><span class="class-time">8:30-10:00 صباحاً</span><span class="class-name">ساندا</span></div>
+            </div>
+
+            <!-- الخميس -->
+            <div class="day-card">
+                <div class="day-name">الخميس</div>
+                <div class="class-item no-class">— NO CLASS —</div>
+                <div class="class-item"><span class="class-time">5:00-6:00 مساءً</span><span class="class-name">جيوجيتسو <small>(7-12 سنة)</small></span></div>
+                <div class="class-item"><span class="class-time">6:00-7:00 مساءً</span><span class="class-name">جيوجيتسو <small>(13+ سنة)</small></span></div>
+                <div class="class-item"><span class="class-time">7:00-8:00 مساءً</span><span class="class-name">جودو</span></div>
+            </div>
+
+        </div>
+
+        <!-- تذييل الجدول: التواصل والانضمام -->
+        <div class="schedule-footer">
+            <h3 class="join-classes-title">JOIN OUR CLASSES</h3>
+            <div class="schedule-footer-links">
+                <a href="https://api.whatsapp.com/send?phone=%2B962788648893" target="_blank" class="social-btn wa-btn">
+                    <span class="icon">💬</span> Coach Ahmed Helmi — 0788648893
+                </a>
+                <a href="https://www.instagram.com/101gymjo" target="_blank" class="social-btn ig-btn">
+                    <span class="icon">📸</span> 101gymjo
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- كود JavaScript متطور لحركة الماوس ولمس الشاشة -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const hero = document.getElementById('splitHero');
+    const paneBlack = document.getElementById('paneBlack');
+    const paneYellow = document.getElementById('paneYellow');
+    const coachImageBoxes = document.querySelectorAll('.coach-image-box');
+
+    // تناوب تلقائي بين فيديوهين بخلفية قسم أحمد
+    const ahmedBgVideo = document.getElementById('ahmedBgVideo');
+    if (ahmedBgVideo) {
+        const ahmedBgSources = [
+            '<?php echo get_template_directory_uri(); ?>/ahmed-bg-1.mp4',
+            '<?php echo get_template_directory_uri(); ?>/ahmed-bg-2.mp4'
+        ];
+        let ahmedBgIndex = 0;
+
+        ahmedBgVideo.addEventListener('ended', () => {
+            ahmedBgIndex = (ahmedBgIndex + 1) % ahmedBgSources.length;
+            ahmedBgVideo.src = ahmedBgSources[ahmedBgIndex];
+            ahmedBgVideo.play();
+        });
+    }
+
+    // تناوب تلقائي بين فيديوهين بخلفية قسم فراس
+    const firasBgVideo = document.getElementById('firasBgVideo');
+    if (firasBgVideo) {
+        const firasBgSources = [
+            '<?php echo get_template_directory_uri(); ?>/firas-bg-1.mp4',
+            '<?php echo get_template_directory_uri(); ?>/firas-bg-2.mp4'
+        ];
+        let firasBgIndex = 0;
+
+        firasBgVideo.addEventListener('ended', () => {
+            firasBgIndex = (firasBgIndex + 1) % firasBgSources.length;
+            firasBgVideo.src = firasBgSources[firasBgIndex];
+            firasBgVideo.play();
+        });
+    }
+
+    if (hero && paneBlack && paneYellow) {
+        paneBlack.addEventListener('mouseenter', () => {
+            hero.classList.add('hover-black');
+            hero.classList.remove('hover-yellow');
+        });
+        paneBlack.addEventListener('mouseleave', () => {
+            hero.classList.remove('hover-black');
+        });
+
+        paneYellow.addEventListener('mouseenter', () => {
+            hero.classList.add('hover-yellow');
+            hero.classList.remove('hover-black');
+        });
+        paneYellow.addEventListener('mouseleave', () => {
+            hero.classList.remove('hover-yellow');
+        });
+    }
+
+    coachImageBoxes.forEach((coachImageBox) => {
+        coachImageBox.addEventListener('mousemove', (e) => {
+            const rect = coachImageBox.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width;
+            const y = (e.clientY - rect.top) / rect.height;
+            const rotateY = (x - 0.5) * 12;
+            const rotateX = (0.5 - y) * 12;
+
+            coachImageBox.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        coachImageBox.addEventListener('mouseleave', () => {
+            coachImageBox.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg)';
+        });
+    });
+});
+</script>
+
+<?php
+get_footer();
+?>
